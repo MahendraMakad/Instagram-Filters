@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Filters</title>
+    <!-- cssgram library for instagram filters -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.12/cssgram.min.css" <!-- fontawesome
+        library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- bulma css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- custom css -->
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+        rel="stylesheet" type="text/css" />
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="section section-head">
+        <div class="container">
+            <div class="img-logo is-flex">
+                <img src="https://10015.io/assets/tools/list/instagram-filters.svg" alt="Instagram Filters">
+                <h1 class="has-text-weight-bold is-size-5">Instagram Filters</h1>
+            </div>
+        </div>
+    </section>
+    <section class="section section-body">
+        <div class="container upload-btns is-flex">
+            <button class="button is-link mr-6">
+                <i class="fa-solid fa-folder-open mr-2"></i>
+                Upload File
+            </button>
+            <button class="button is-Light">
+                <i class="fa-solid fa-link mr-2"></i>
+                Upload From URL
+            </button>
+        </div>
+        <div class="container file-upload my-6" id="file-upload" role="presentation">
+            <label for="inputTag">
+                <input id="inputTag" type="file" style="display: none;" />
+                <br />
+                <span id="imageName"></span>
+                <div class="dropzone">
+                    <i class="fa-solid fa-upload bx-upload"></i>
+                    <div class="text">
+                        <span>Drag Your Image here</span>
+                    </div>
+                </div>
+            </label>
+        </div>
+        </div>
+        <div class="image-process container is-flex">
+            <div class="no-image is-flex">
+                <img src="" alt="" id="input-image">
+                <i class="fa-solid fa-sliders" id="slider-icon"></i>
+                <div id="image-process-text">Upload an image before starting to apply filters</div>
+            </div>
+        </div>
+    </section>
+    <!-- example filters -->
+    <section class="section">
+        <div class="container is-flex examples">
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Normal</div>
+                <figure class="normal figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Clarendon</div>
+                <figure class="clarendon figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Gingham</div>
+                <figure class="gingham figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Moon</div>
+                <figure class="moon figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Lark</div>
+                <figure class="lark figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Reyes</div>
+                <figure class="reyes figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Juno</div>
+                <figure class="juno figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Slumber</div>
+                <figure class="slumber figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Crema</div>
+                <figure class="crema figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Ludwig</div>
+                <figure class="ludwig figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Aden</div>
+                <figure class="aden figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+            <div class="container is-flex is-flex-direction-column filter">
+                <div class="filter-name">Perpetua</div>
+                <figure class="perpetua figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                    <img src="./assets/asset 26.jpeg" alt="normal-filter" class="filter-image">
+                </figure>
+            </div>
+        </div>
+        <!-- reset and download buttons -->
+        <div class="container is-flex download-btns">
+            <button class="button  is-rounded" id="button-reset" onclick="resetImage()" disabled>
+                Reset
+            </button>
+            <button class="button  is-rounded  is-info" id="download-button" 
+                >
+                Download
+            </button>
+        </div>
+    </section>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <!-- external file that can support for download an image so we used 
+        FileSaver external script file. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>
